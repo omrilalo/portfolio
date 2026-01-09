@@ -86,49 +86,79 @@ export const About: React.FC = () => {
                     <p className="text-white/40 font-sans">Have a project in mind? Fill out the form below.</p>
                 </div>
 
-                <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert("Thank you! This is a demo form."); }}>
+                <form
+  className="space-y-6"
+  action="https://formspree.io/f/mzddpddk"
+  method="POST"
+>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                            <label htmlFor="name" className="ml-2 text-xs font-mono font-bold text-white/30 uppercase tracking-wider block">Name</label>
-                            <input 
-                                id="name"
-                                type="text" 
-                                className="w-full bg-white/5 border-2 border-transparent focus:border-warm-orange/50 hover:bg-white/10 transition-all rounded-xl px-4 py-3 outline-none text-white font-sans placeholder-white/20" 
-                                placeholder="Your Name"
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <label htmlFor="email" className="ml-2 text-xs font-mono font-bold text-white/30 uppercase tracking-wider block">Email</label>
-                            <input 
-                                id="email"
-                                type="email" 
-                                className="w-full bg-white/5 border-2 border-transparent focus:border-warm-red/50 hover:bg-white/10 transition-all rounded-xl px-4 py-3 outline-none text-white font-sans placeholder-white/20" 
-                                placeholder="name@example.com"
-                            />
-                        </div>
-                    </div>
+  <div className="space-y-2">
+    <label
+      htmlFor="name"
+      className="ml-2 text-xs font-mono font-bold text-white/30 uppercase tracking-wider block"
+    >
+      Name
+    </label>
+    <input
+      id="name"
+      name="name"
+      type="text"
+      required
+      className="w-full bg-white/5 border-2 border-transparent focus:border-warm-orange/50 hover:bg-white/10 transition-all rounded-xl px-4 py-3 outline-none text-white font-sans placeholder-white/20"
+      placeholder="Your Name"
+    />
+  </div>
 
-                    <div className="space-y-2">
-                        <label htmlFor="message" className="ml-2 text-xs font-mono font-bold text-white/30 uppercase tracking-wider block">Project Details</label>
-                        <textarea 
-                            id="message"
-                            rows={4} 
-                            className="w-full bg-white/5 border-2 border-transparent focus:border-warm-magenta/50 hover:bg-white/10 transition-all rounded-xl px-4 py-3 outline-none text-white font-sans placeholder-white/20 resize-none" 
-                            placeholder="Tell me about your idea..."
-                        ></textarea>
-                    </div>
+  <div className="space-y-2">
+    <label
+      htmlFor="email"
+      className="ml-2 text-xs font-mono font-bold text-white/30 uppercase tracking-wider block"
+    >
+      Email
+    </label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      required
+      className="w-full bg-white/5 border-2 border-transparent focus:border-warm-red/50 hover:bg-white/10 transition-all rounded-xl px-4 py-3 outline-none text-white font-sans placeholder-white/20"
+      placeholder="name@example.com"
+    />
+  </div>
+</div>
 
-                    <button type="submit" className="w-full group relative px-8 py-4 bg-white text-black font-display font-bold text-lg rounded-xl overflow-hidden transition-all hover:scale-[1.01] active:scale-[0.99] shadow-lg">
-                        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-warm-orange via-warm-red to-warm-magenta opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                        <span className="relative flex items-center justify-center gap-3 group-hover:text-white transition-colors">
-                            SEND REQUEST <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                        </span>
-                    </button>
-                </form>
-            </div>
-        </GradientFrame>
-      </div>
+<div className="space-y-2">
+  <label
+    htmlFor="message"
+    className="ml-2 text-xs font-mono font-bold text-white/30 uppercase tracking-wider block"
+  >
+    Project Details
+  </label>
+  <textarea
+    id="message"
+    name="message"
+    rows={4}
+    required
+    className="w-full bg-white/5 border-2 border-transparent focus:border-warm-magenta/50 hover:bg-white/10 transition-all rounded-xl px-4 py-3 outline-none text-white font-sans placeholder-white/20 resize-none"
+    placeholder="Tell me about your idea..."
+  ></textarea>
+</div>
 
-    </div>
-  );
-};
+{/* Optional: nicer email subject in your inbox */}
+<input type="hidden" name="_subject" value="New message from portfolio site" />
+
+<button
+  type="submit"
+  className="w-full group relative px-8 py-4 bg-white text-black font-display font-bold text-lg rounded-xl overflow-hidden transition-all hover:scale-[1.01] active:scale-[0.99] shadow-lg"
+>
+  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-warm-orange via-warm-red to-warm-magenta opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+  <span className="relative flex items-center justify-center gap-3 group-hover:text-white transition-colors">
+    SEND REQUEST{" "}
+    <Send
+      size={18}
+      className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+    />
+  </span>
+</button>
+</form>
