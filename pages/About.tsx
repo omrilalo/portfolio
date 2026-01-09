@@ -1,4 +1,3 @@
-
 import React from "react";
 import { GradientFrame } from "../components/GradientFrame";
 import { Mail, Instagram, Linkedin, Send } from "lucide-react";
@@ -59,6 +58,7 @@ export const About: React.FC = () => {
 
           <div className="pt-8 border-t border-white/10">
             <h3 className="font-mono text-sm text-white/30 mb-4 uppercase tracking-widest">Connect</h3>
+
             <div className="flex gap-6">
               {PROFILE.socials.instagram && (
                 <a
@@ -66,17 +66,25 @@ export const About: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-white/5 border border-white/5 shadow-sm rounded-full hover:bg-warm-orange hover:text-white transition-all group"
+                  aria-label="Instagram"
                 >
                   <Instagram size={24} />
                 </a>
               )}
 
-              <a
-                href={`mailto:${PROFILE.email}`}
+              {/* Email: copy to clipboard (works for everyone) */}
+              <button
+                type="button"
+                onClick={() => {
+                  navigator.clipboard.writeText(PROFILE.email);
+                  alert("Email copied to clipboard");
+                }}
                 className="p-3 bg-white/5 border border-white/5 shadow-sm rounded-full hover:bg-warm-red hover:text-white transition-all group"
+                aria-label="Copy email"
+                title="Click to copy email"
               >
                 <Mail size={24} />
-              </a>
+              </button>
 
               {PROFILE.socials.linkedin && (
                 <a
@@ -84,6 +92,7 @@ export const About: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-white/5 border border-white/5 shadow-sm rounded-full hover:bg-warm-magenta hover:text-white transition-all group"
+                  aria-label="LinkedIn"
                 >
                   <Linkedin size={24} />
                 </a>
