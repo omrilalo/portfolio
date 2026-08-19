@@ -66,7 +66,7 @@ export const Landing: React.FC = () => {
                 }}
               >
                 <span 
-                  className="hero-title-gradient text-transparent bg-clip-text bg-gradient-to-r from-warm-orange via-warm-red to-warm-magenta animate-gradient-x"
+                  className="hero-title-gradient text-[0.715em] text-transparent bg-clip-text bg-gradient-to-r from-warm-orange via-warm-red to-warm-magenta animate-gradient-x"
                   style={{ 
                     WebkitBackgroundClip: 'text',
                     display: 'inline-block',

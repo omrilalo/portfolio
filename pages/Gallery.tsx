@@ -37,7 +37,7 @@ export const Gallery: React.FC = () => {
             </span>
           </h2>
           <p className="font-sans text-white/50 max-w-lg mx-auto">
-            A curated collection of motion graphics, generative art, and AI-assisted experiments.
+            Selected work across generative AI, motion design and visual production.
           </p>
         </div>
 

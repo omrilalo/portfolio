@@ -17,14 +17,14 @@ export const PROFILE = { // deploy test
   },
   landing: {
     availability: "Available for Freelance", 
-    titleLine1: "MOTION",
-    titleLine2: "AI SPECIALIST",
-    description: "Merging motion design with generative AI to craft visual experiences that feel both nostalgic and futuristic.",
+    titleLine1: "AI CREATIVE",
+    titleLine2: "MOTION DESIGNER",
+    description: "Combining generative AI with motion design, compositing and visual storytelling to take ideas from concept to finished production.",
     featuredProjectIdx: 0
   },
   about: {
     greeting: "HELLO, I'M",
-    bio: "B.A animation from Bezalel academy of arts and design. Very adaptive with technical tools and computer software, with a strong eye for composition and movement. Experienced at the entire creative pipeline, from pre-production to post. A very fast and diligent worker and learner, always looking to expand my horizons and develop more skills and techniques, and to grow as a person and artist.",
+    bio: "I'm an AI creative and motion designer with a B.A. in Animation from Bezalel, working across generative AI, motion design, compositing and visual production. I use AI throughout the creative pipeline — from concept development and visual exploration to shot creation, animation and post-production — combining emerging tools with traditional production techniques to create polished, production-ready work.",
     photo: "/media/images/WhatsApp Image 2026-01-09 at 15.02.41.jpeg"
   },
   skills: {
