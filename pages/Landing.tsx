@@ -49,8 +49,7 @@ export const Landing: React.FC = () => {
         <div className="hero-left-col space-y-8 order-2 lg:order-1 relative z-10 w-full">
           <div className="space-y-4">
             <h1 className="font-display font-bold leading-[1.1] text-white">
-              <span className="block mb-2 tracking-tighter text-6xl md:text-8xl">{PROFILE.landing.titleLine1}</span>
-              
+<span className="block mb-2 tracking-tighter text-[11vw] md:text-8xl whitespace-nowrap">{PROFILE.landing.titleLine1}</span>              
               {/* 
                 HOME HERO TITLE WRAPPER 
                 Optimized with responsive clamp and conditional nowrap via CSS.
