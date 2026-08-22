@@ -36,8 +36,7 @@ export const Gallery: React.FC = () => {
               </span>
             </span>
           </h2>
-          <p className="font-sans text-white/50 max-w-lg mx-auto">
-            Selected work across generative AI, motion design and visual production.
+<p className="font-sans text-white/50 max-w-lg md:max-w-2xl mx-auto">            Selected work across generative AI, motion design and visual production.
           </p>
         </div>
 

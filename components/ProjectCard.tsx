@@ -1,4 +1,3 @@
-
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Project } from '../types';
@@ -46,7 +45,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, className = "
           <img 
             src={thumbnailUrl} 
             alt={project.title}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 z-10 ${isHovering && isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 z-10 ${
+             project.id === 'HOLOBOX' ? 'scale-[1.80] origin-top object-top' : ''
+            } ${isHovering && isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}
           />
           
           {/* Video Layer */}
@@ -59,14 +60,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, className = "
               playsInline
               preload="auto"
               onCanPlay={() => setIsVideoLoaded(true)}
-              className="w-full h-full object-cover"
+              className={`w-full h-full object-cover ${
+              project.id === 'HOLOBOX' ? 'scale-[1.80] origin-top object-top' : ''
+              }`}
             />
           </div>
 
           {/* Loader */}
           {isHovering && !isVideoLoaded && (
             <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/20 backdrop-blur-sm">
-                <Loader2 className="w-6 h-6 text-white animate-spin" />
+              <Loader2 className="w-6 h-6 text-white animate-spin" />
             </div>
           )}
 

@@ -62,6 +62,63 @@ export const PROFILE = { // deploy test
 };
 
 export const PROJECTS: Project[] = [
+ {
+  id: 'XIAOMI',
+  title: 'Xiaomi Austria',
+  description: 'An AI-generated launch film bringing Xiaomi’s vehicles to the roads and landscapes of Austria.',
+  thumbnail: '/media/images/xiaomi/5.png',
+  videoPreview: '/media/videos/xiaomi_hover.mp4',
+  fullVideo: 'https://www.youtube.com/watch?v=6ASdkR60wYM',
+  tags: ['GPT Image 2', 'Kling 3', 'Seedance 2', 'After Effects'],
+  year: '2026',
+  details: 'Created for Xiaomi’s vehicle launch event in Austria, following the cars on a journey from the Austrian countryside to the streets of Vienna.',
+  images: [
+    '/media/images/xiaomi/1.png',
+    '/media/images/xiaomi/2.png',
+    '/media/images/xiaomi/3.png',
+    '/media/images/xiaomi/4.png',
+    '/media/images/xiaomi/5.png',
+    '/media/images/xiaomi/6.png',
+  ]
+},
+{
+  id: 'HOLOBOX',
+  title: 'Mashcal Holobox',
+  description: 'An AI-assisted film created for Mashcal, designed specifically for an immersive Holobox display.',
+  thumbnail: '/media/images/holobox/7.png',
+  videoPreview: '/media/videos/holobox_hover.mp4',
+  fullVideo: 'https://www.youtube.com/watch?v=gTpcmDPgrt0',
+  tags: ['GPT Image 2', 'Kling 3', 'Seedance 1.5', 'After Effects'],
+  year: '2026',
+  details: 'Presented at the MUNI Expo and at Mashcal’s visitor center, the film was designed around the Holobox format, using its life-size vertical display to create the illusion of a person existing inside a physical space.',
+  images: [
+    '/media/images/holobox/1.jpeg',
+    '/media/images/holobox/2.png',
+    '/media/images/holobox/3.png',
+    '/media/images/holobox/4.jpg',
+    '/media/images/holobox/5.png',
+    '/media/images/holobox/6.png',
+  ]
+},
+{
+  id: 'TIMNA',
+  title: 'Timna Mapping Concept',
+  description: 'An AI-generated concept film for a projection mapping experience on the iconic Solomon’s Pillars at Timna Park.',
+  thumbnail: '/media/images/timna/1.jpg',
+  videoPreview: '/media/videos/timna_hover.mp4',
+  fullVideo: 'https://www.youtube.com/watch?v=Is2rAXt4R0Q',
+  tags: ['Nano Banana 2', 'Kling 3', 'After Effects'],
+  year: '2026',
+  details: 'Created for a competitive pitch, the film visualizes an immersive show exploring the rich history of the Timna region through large-scale projection mapping. The studio ultimately won the pitch.',
+  images: [
+    '/media/images/timna/1.jpg',
+    '/media/images/timna/2.jpg',
+    '/media/images/timna/3.jpg',
+    '/media/images/timna/4.jpg',
+    '/media/images/timna/5.jfif',
+    '/media/images/timna/6.jfif',
+  ]
+},
   {
     id: 'CTRL',
     title: 'CTRL',
