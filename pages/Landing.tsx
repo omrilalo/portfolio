@@ -1,4 +1,3 @@
-
 import React, { useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GradientFrame } from '../components/GradientFrame';
@@ -24,16 +23,16 @@ export const Landing: React.FC = () => {
   const handleMouseEnter = () => {
     setIsHovering(true);
     if (videoRef.current) {
-        if (videoRef.current.readyState === 0) videoRef.current.load();
-        videoRef.current.play().catch(e => console.log('Autoplay prevented', e));
+      if (videoRef.current.readyState === 0) videoRef.current.load();
+      videoRef.current.play().catch(e => console.log('Autoplay prevented', e));
     }
   };
 
   const handleMouseLeave = () => {
     setIsHovering(false);
     if (videoRef.current) {
-        videoRef.current.pause();
-        videoRef.current.currentTime = 0;
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
     }
   };
 
@@ -49,7 +48,10 @@ export const Landing: React.FC = () => {
         <div className="hero-left-col space-y-8 order-2 lg:order-1 relative z-10 w-full">
           <div className="space-y-4">
             <h1 className="font-display font-bold leading-[1.1] text-white">
-<span className="block mb-2 tracking-tighter text-[11vw] md:text-8xl whitespace-nowrap">{PROFILE.landing.titleLine1}</span>              
+              <span className="block mb-2 tracking-tighter text-[11vw] md:text-8xl whitespace-nowrap">
+                {PROFILE.landing.titleLine1}
+              </span>
+
               {/* 
                 HOME HERO TITLE WRAPPER 
                 Optimized with responsive clamp and conditional nowrap via CSS.
@@ -76,6 +78,7 @@ export const Landing: React.FC = () => {
                 </span>
               </span>
             </h1>
+
             <p className="font-sans text-xl text-white/60 max-w-md leading-relaxed">
               {PROFILE.landing.description}
             </p>
@@ -91,6 +94,7 @@ export const Landing: React.FC = () => {
                 </span>
               </button>
             </Link>
+
             <Link to="/about" className="inline-block">
               <button className="px-8 py-4 border-2 border-white/10 bg-white/5 backdrop-blur-sm text-white/80 font-display font-bold text-lg rounded-full hover:border-warm-orange hover:text-warm-orange transition-colors">
                 CONTACT ME
@@ -108,35 +112,55 @@ export const Landing: React.FC = () => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-               <img 
-                 src={featuredThumbnailUrl} 
-                 alt="Featured Work" 
-                 className={`absolute inset-0 w-full h-full object-cover transition-transform duration-1000 z-10 ${isHovering && isVideoLoaded ? 'opacity-0' : 'opacity-100 scale-100 group-hover:scale-110'}`}
-               />
+              <img 
+                src={featuredThumbnailUrl} 
+                alt="Featured Work" 
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 z-10 ${
+                  featuredProject.id === 'HOLOBOX'
+                    ? `origin-top object-top ${
+                        isHovering && isVideoLoaded
+                          ? 'opacity-0 scale-[1.80]'
+                          : 'opacity-100 scale-[1.80]'
+                      }`
+                    : `${
+                        isHovering && isVideoLoaded
+                          ? 'opacity-0'
+                          : 'opacity-100 scale-100 group-hover:scale-110'
+                      }`
+                }`}
+              />
 
-               <div className="absolute inset-0 w-full h-full bg-black z-0">
-                  <video
-                    ref={videoRef}
-                    src={featuredVideoUrl}
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    onCanPlay={() => setIsVideoLoaded(true)}
-                    className="w-full h-full object-cover"
-                  />
-               </div>
+              <div className="absolute inset-0 w-full h-full bg-black z-0">
+                <video
+                  ref={videoRef}
+                  src={featuredVideoUrl}
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  onCanPlay={() => setIsVideoLoaded(true)}
+                  className={`w-full h-full object-cover ${
+                    featuredProject.id === 'HOLOBOX'
+                      ? 'scale-[1.80] origin-top object-top'
+                      : ''
+                  }`}
+                />
+              </div>
 
-               {isHovering && !isVideoLoaded && (
-                  <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/20 backdrop-blur-sm">
-                      <Loader2 className="w-10 h-10 text-white animate-spin" />
-                  </div>
-               )}
+              {isHovering && !isVideoLoaded && (
+                <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/20 backdrop-blur-sm">
+                  <Loader2 className="w-10 h-10 text-white animate-spin" />
+                </div>
+              )}
 
-               <div className="absolute bottom-8 left-8 bg-black/60 backdrop-blur-xl px-6 py-3 rounded-2xl shadow-lg border border-white/10 z-30">
-                  <p className="text-xs font-mono text-white/40 uppercase tracking-tighter">Featured Project</p>
-                  <p className="font-display font-bold text-xl text-white tracking-tighter">{featuredProject.title}</p>
-               </div>
+              <div className="absolute bottom-8 left-8 bg-black/60 backdrop-blur-xl px-6 py-3 rounded-2xl shadow-lg border border-white/10 z-30">
+                <p className="text-xs font-mono text-white/40 uppercase tracking-tighter">
+                  Featured Project
+                </p>
+                <p className="font-display font-bold text-xl text-white tracking-tighter">
+                  {featuredProject.title}
+                </p>
+              </div>
             </Link>
           </GradientFrame>
         </div>
@@ -159,12 +183,15 @@ export const Landing: React.FC = () => {
             grid-template-columns: minmax(480px, 1fr) minmax(420px, 520px);
             gap: clamp(24px, 4vw, 64px);
           }
+
           .hero-left-col {
             min-width: 0;
           }
+
           .hero-right-col {
             width: 100%;
           }
+
           .hero-title-gradient {
             white-space: nowrap; /* Keep single line on desktop */
           }
