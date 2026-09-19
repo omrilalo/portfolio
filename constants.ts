@@ -62,7 +62,26 @@ export const PROFILE = { // deploy test
 };
 
 export const PROJECTS: Project[] = [
- {
+{
+  id: 'NEXYTE',
+  title: 'NEXYTE Launch Film',
+  description: 'An AI-generated launch film for Cognyte’s NEXYTE platform, turning a complex financial investigation into a cinematic crime narrative.',
+  thumbnail: '/media/images/nexyte/4.png',
+  videoPreview: '/media/videos/nexyte_hover.mp4',
+  fullVideo: 'https://www.youtube.com/embed/4KNxnGhH8XQ',
+  tags: ['Seedance 2.5', 'GPT Image 2', 'After Effects'],
+  year: '2026',
+  details: 'The film follows three criminal groups operating across different financial schemes, while an investigator uses NEXYTE to trace their activity and connect the evidence. What initially appears to be three unrelated cases gradually reveals itself as a single criminal network. The production combines AI-generated characters, environments and cinematic sequences with motion design and compositing in After Effects.',
+  images: [
+    '/media/images/nexyte/1.png',
+    '/media/images/nexyte/2.png',
+    '/media/images/nexyte/3.png',
+    '/media/images/nexyte/4.png',
+    '/media/images/nexyte/5.png',
+    '/media/images/nexyte/6.png',
+  ]
+},
+  {
   id: 'XIAOMI',
   title: 'Xiaomi Austria',
   description: 'An AI-generated launch film bringing Xiaomi’s vehicles to the roads and landscapes of Austria.',
